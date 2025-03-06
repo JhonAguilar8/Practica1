@@ -1,0 +1,20 @@
+$TTL 604800
+@   IN  SOA empresa.local. root.empresa.local. (
+        2  ; Serial
+        604800        ; Refresh
+        86400        ; Retry
+        2419200      ; Expire
+        604800 )     ; Minimum TTL
+
+; Servidor DNS
+@       IN  NS  ns.empresa.local.
+ns     IN  A   192.168.49.3
+
+; Registros A (Host -> IP)
+vm1 IN  A   192.168.49.3
+vm2  IN  A   192.168.49.2
+
+; Registro CNAME
+www IN CNAME servidor.empresa.local.
+maestro IN CNAME ns
+
